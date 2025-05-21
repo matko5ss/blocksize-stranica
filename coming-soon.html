@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Haptic - Contact</title>
+	<meta name="description" content="Haptic - Web And Agency HTML Template">
+	<meta name="keywords" content="agency, app, business, company, corporate, designer, freelance, fullpage, modern, office, personal, portfolio, professional, web, web agency">
+	<meta name="author" content="Themexriver">
+	<link rel="shortcut icon" href="assets/img/logo/f-icon.png" type="image/x-icon">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/fontawesome.css">
+	<link rel="stylesheet" href="assets/css/flaticon_aina.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/global.css">
+	<link rel="stylesheet" href="assets/css/swiper.min.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="home-1">
+	<div id="preloader"></div>
+	<div class="up">
+		<a href="#" class="scrollup text-center"><i class="fas fa-chevron-up"></i></a>
+	</div>
+	<div class="cursor"></div>
+
+<!-- Start of coming soon  section
+	============================================= -->
+	<section id="bi-coming-soon" class="bi-coming-soon-section" data-background="assets/img/bg/coming-bg.png">
+		<div class="container">
+			<div class="brand-logo">
+				<a href="#"><img src="assets/img/logo/logo2.png" alt=""></a>
+			</div>
+			<div class="bi-coming-soon-img text-center">
+				<img src="assets/img/about/coming.png" alt="">
+			</div> 
+			<div class="coming-soon__countdown countdown d-flex flex-wrap justify-content-center headline pera-content" data-countdown="2024/08/28">
+			</div>
+			<div class="bi-coming-soon-subscription position-relative">
+				<form action="#" method="get">
+					<input type="email" name="email" placeholder="Email Address">
+					<button>Submit Now</button>
+				</form>
+			</div>
+			<div class="coming-soon-socail text-center ul-li">
+				<ul>
+					<li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#!"><i class="fab fa-dribbble"></i></a></li>
+					<li><a href="#!"><i class="fab fa-behance"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</section>	
+<!-- End of coming soon  section
+	============================================= -->	
+
+
+
+	<!-- For Js Library -->
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/appear.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/knob.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/parallax.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/ScrollToPlugin.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/jquery.filterizr.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/hover-revel.js"></script>
+    <script src="assets/js/split-type.min.js"></script>
+    <script src="assets/js/parallax-scroll.js"></script>
+    <script src="assets/js/jquery.marquee.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/tilt.jquery.min.js"></script>
+    <script src="assets/js/matter.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>		
