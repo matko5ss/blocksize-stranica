@@ -6481,6 +6481,9 @@ select:visited {
   font-size: 50px;
   position: absolute;
   border-radius: 100%;
+  background-size: 100% 100% !important;
+  border: none;
+  outline: none;
 }
 .bi-main-slider-next-prev .bi-main-slider-arrow-4.bi-main-button-prev-4 {
   left: -150px;
