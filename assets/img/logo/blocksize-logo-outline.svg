@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60">
+  <style>
+    .outline-text {
+      font-family: 'Arial Black', 'Arial Bold', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      fill: transparent;
+      stroke: #FF3838;
+      stroke-width: 1.5px;
+      letter-spacing: 1px;
+    }
+  </style>
+  
+  <!-- Background rectangle (optional, can be removed) -->
+  <rect x="0" y="0" width="200" height="60" fill="#171926" opacity="0" />
+  
+  <!-- Outline text -->
+  <text x="10" y="40" class="outline-text">BLOCKSIZE</text>
+</svg>
