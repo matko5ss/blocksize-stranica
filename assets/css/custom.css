@@ -1,0 +1,14 @@
+/* Custom CSS to hide specific elements */
+.bi-slider-watch-video {
+    display: none !important;
+}
+
+/* Hide the pricing section */
+#bi-pricing-4 {
+    display: none !important;
+}
+
+/* Add bottom padding to portfolio section */
+#bi-portfolio-4 {
+    padding-bottom: 80px !important;
+}
