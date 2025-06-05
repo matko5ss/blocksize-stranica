@@ -484,15 +484,7 @@
                   </div>
                   <div class="bi-about-text-area-4 bins-text">
                     <p>
-                      At BLOCKSIZE, we blend innovation with expertise to build
-                      digital solutions that propel your business forward.
-                      Whether you’re seeking cutting-edge web development,
-                      secure blockchain solutions, intelligent AI applications,
-                      or insightful data science strategies, our team is
-                      committed to transforming your ideas into standout
-                      realities. Focused on quality, creativity, and measurable
-                      results, we empower your brand to make a powerful impact
-                      in a digital world.
+                      
                     </p>
                     <div
                       class="bi-abut-feature-list-4 ul-li wow fadeInUp"
@@ -1261,8 +1253,11 @@
         </div>
       </div>
       <div class="bi-footer-copyright text-center">
-        Copyright 2023 @webagency
-      </div>
+  Copyright <span id="year"></span> @webagency
+</div>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
     </footer>
     <!-- End of Footer  section
 	============================================= -->
