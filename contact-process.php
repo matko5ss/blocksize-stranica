@@ -6,19 +6,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Pripremi email
     $to = "info@blocksize.hr";
-    $subject = "Kontakt forma - Blocksize";
-    $body = "Ime: $ime\nEmail: $email\nPoruka:\n$poruka";
+    $subject = "Contact Form Submission - Blocksize";
+    $body = "Name: $ime\nEmail: $email\nMessage:\n$poruka";
     $headers = "From: $email\r\nReply-To: $email\r\n";
 
     // Pošalji email
-    mail($to, $subject, $body, $headers);
+    $mail_sent = mail($to, $subject, $body, $headers);
 
     // Spremi podatke u datoteku
-    $log = date("Y-m-d H:i:s") . " | Ime: $ime | Email: $email | Poruka: $poruka\n";
+    $log = date("Y-m-d H:i:s") . " | Name: $ime | Email: $email | Message: $poruka\n";
     file_put_contents("form-submissions.txt", $log, FILE_APPEND);
 
-    // Preusmjeri korisnika na stranicu za zahvalnicu
-    header("Location: hvala.html");
+    // Prikaz poruke o uspješnom slanju
+    if ($mail_sent) {
+        echo "<script>alert('Thank you for your message! We will get back to you soon.'); window.location.href='contact.html';</script>";
+    } else {
+        echo "<script>alert('There was a problem sending your message. Please try again later.'); window.location.href='contact.html';</script>";
+    }
     exit();
 } else {
     header("Location: index.html");
