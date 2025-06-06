@@ -73,3 +73,37 @@
   border: 1px solid rgba(220, 53, 69, 0.2);
   color: #dc3545;
 }
+
+/* New form styles */
+form {
+  background-color: #161729;
+  padding: 20px;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #eb5c18;
+  border-radius: 4px;
+  background-color: #f95055;
+  color: #161729;
+}
+
+form button[type="submit"] {
+  background-color: #ff3838;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #ca2db8;
+}
