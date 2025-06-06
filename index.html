@@ -1220,11 +1220,69 @@
               /></a>
             </div>
             <div class="logo-mail text-center headline">
-              <h3><a href="#">email@webs.com</a></h3>
+              <h3><a href="mailto:info@blocksize.hr">info@blocksize.hr</a></h3>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Start of Contact Form section -->
+      <section id="bi-blog-4" class="bi-contact-form-section">
+        <div class="container">
+          <div class="bi-section-title-4 text-center headline">
+            <div
+              class="sub-title position-relative text-uppercase wow fadeInRight"
+              data-wow-delay="100ms"
+              data-wow-duration="1000ms"
+            >
+              Get in touch
+            </div>
+            <h2 class="tx-split-text split-in-right">
+              Contact Us
+            </h2>
+          </div>
+          <div class="bi-contact-form-content">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <form id="contact-form" class="bi-contact-form" action="contact-process.php" method="post">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name *" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email *" required>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="text" name="subject" class="form-control" placeholder="Subject *" required>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder="Your Message *" rows="5" required></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                      <button type="submit" class="bi-btn-4 text-uppercase">
+                        Send Message
+                        <span class="d-flex justify-content-center align-items-center">
+                          <img src="assets/img/icon/arrow.svg" alt="" />
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Contact Form section -->
+
       <div class="bi-footer-copyright text-center">
   Copyright <span id="year"></span> 
 </div>
@@ -1262,5 +1320,47 @@
     <script src="assets/js/tilt.jquery.min.js"></script>
     <script src="assets/js/matter.min.js"></script>
     <script src="assets/js/script.js"></script>
+    
+    <!-- Contact Form Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check for URL parameters to display success/error messages
+        const urlParams = new URLSearchParams(window.location.search);
+        const contactStatus = urlParams.get('contact');
+        const contactForm = document.getElementById('contact-form');
+        const formMessageContainer = document.createElement('div');
+        formMessageContainer.className = 'form-message mt-4';
+        
+        if (contactForm) {
+          // Insert message container after the form
+          contactForm.parentNode.insertBefore(formMessageContainer, contactForm.nextSibling);
+          
+          // Display appropriate message based on URL parameter
+          if (contactStatus === 'success') {
+            formMessageContainer.className = 'form-message alert alert-success mt-4';
+            formMessageContainer.innerHTML = '<p>Thank you for your message! We will get back to you soon.</p>';
+            
+            // Clear form fields on success
+            if (contactForm) {
+              contactForm.reset();
+            }
+          } else if (contactStatus === 'error') {
+            formMessageContainer.className = 'form-message alert alert-danger mt-4';
+            formMessageContainer.innerHTML = '<p>There was a problem sending your message. Please try again later.</p>';
+          }
+          
+          // Add form submission handling
+          contactForm.addEventListener('submit', function(e) {
+            // Form validation is handled by HTML5 required attributes
+            // This is just for additional UX improvements
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+              submitBtn.innerHTML = 'Sending...';
+              submitBtn.disabled = true;
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
