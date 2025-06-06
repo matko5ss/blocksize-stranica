@@ -107,3 +107,11 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
   background-color: #ca2db8;
 }
+
+/* Style for contact page background image */
+.contact-background {
+  background-image: url('assets/img/your-image.jpg'); /* Change to your image path */
+  background-size: cover;
+  background-position: center;
+  height: 760px;
+}
