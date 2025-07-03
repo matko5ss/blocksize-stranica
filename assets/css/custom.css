@@ -19,6 +19,80 @@
   position: relative;
 }
 
+/* Contact Info Section Background */
+#bi-contact-info,
+.bi-contact-info-section {
+  background-color: #1b1c35 !important;
+}
+
+#bi-contact-info *,
+.bi-contact-info-section * {
+  color: #fff !important;
+}
+
+/* Consistent styling for contact info items */
+.bi-contact-info-item {
+  background-color: #1b1c35 !important;
+  border: 1px solid #2a2a45 !important;
+  transition: all 0.3s ease-in-out !important;
+  padding: 30px !important;
+  border-radius: 8px !important;
+  margin-bottom: 20px !important;
+}
+
+.bi-contact-info-item:hover {
+  background-color: #232440 !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Override any background images */
+.bi-contact-info-item .info-bg {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+.bi-contact-info-item .info-bg:before {
+  background: none !important;
+  background-color: transparent !important;
+}
+
+/* Style for inner icon */
+.bi-contact-info-item .inner-icon {
+  background-color: #232440 !important;
+  border-radius: 50% !important;
+  width: 80px !important;
+  height: 80px !important;
+  margin-bottom: 20px !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.bi-contact-info-item:hover .inner-icon {
+  background-color: #2a2a4f !important;
+  transform: scale(1.1) !important;
+}
+
+/* Style for text content */
+.bi-contact-info-item .inner-text h3 {
+  color: #fff !important;
+  font-size: 22px !important;
+  margin-bottom: 15px !important;
+}
+
+.bi-contact-info-item .inner-text a {
+  color: #fff !important;
+  opacity: 0.8 !important;
+  transition: all 0.3s ease-in-out !important;
+  display: block !important;
+  margin-bottom: 5px !important;
+}
+
+.bi-contact-info-item .inner-text a:hover {
+  opacity: 1 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
 .bi-contact-form {
   margin-top: 40px;
   padding: 30px;
@@ -51,8 +125,93 @@
   outline: none;
 }
 
-.bi-contact-form button[type="submit"] {
+#bi-contact-info {
+  color: #fff;
+}
+
+/* Force all text elements in contact info section to be white */
+#bi-contact-info h3,
+#bi-contact-info a,
+#bi-contact-info p,
+#bi-contact-info .inner-text,
+#bi-contact-info .inner-text *,
+#bi-contact-info .bi-contact-info-item * {
+  color: #fff !important;
+}
+
+.bi-team-details-contact-title,
+.bi-team-details-contact-info .bi-team-details-contact-title {
+  padding-left: 2% !important;
+}
+
+/* Make contact form text white */
+.bi-team-details-contact-form input,
+.bi-team-details-contact-form textarea {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
+/* Placeholder text color */
+.bi-team-details-contact-form input::placeholder,
+.bi-team-details-contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Make textarea same style as input fields */
+.bi-team-details-contact-form textarea {
+  border-radius: 5px !important;
+  padding: 12px 20px !important;
+  height: 150px !important;
+}
+
+.bi-contact-form button[type="submit"],
+.bi-submit-btn button {
   margin-top: 10px;
+}
+
+/* Make the submit button match bi-btn-4 style */
+button.bi-btn-4 {
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+  font-weight: 600;
+  position: relative;
+  border-radius: 100px;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 15px 64px 15px 30px;
+  font-family: var(--heading);
+  background: linear-gradient(135deg, #eb5c18 0%, #f95055 45.72%, #ca2db8 100%);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+button.bi-btn-4:before {
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 0%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  background: rgba(11, 12, 14, 0.23);
+  transition: all 500ms ease;
+}
+
+button.bi-btn-4 span:last-child {
+  top: 0;
+  right: 0;
+  width: 39px;
+  height: 100%;
+  position: absolute;
+  border-radius: 50px 0px 0px 50px;
+  background: rgba(11, 12, 14, 0.23);
+}
+
+button.bi-btn-4:hover:before {
+  width: 100%;
 }
 
 .form-message {
@@ -110,7 +269,7 @@ form button[type="submit"]:hover {
 
 /* Style for contact page background image */
 .contact-background {
-  background-image: url('assets/img/your-image.jpg'); /* Change to your image path */
+  background-image: url("assets/img/your-image.jpg"); /* Change to your image path */
   background-size: cover;
   background-position: center;
   height: 760px;
