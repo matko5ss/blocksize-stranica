@@ -24,6 +24,16 @@
     <link rel="stylesheet" href="assets/css/swiper.min.css" />
     <link rel="stylesheet" href="assets/css/magnific-popup.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      @media (max-width: 767px) {
+        .hide-on-mobile {
+          display: none !important;
+        }
+        .mobile-only-image {
+          display: block !important;
+        }
+      }
+    </style>
     <link rel="stylesheet" href="assets/css/custom.css" />
   </head>
   <body class="home-4">
@@ -71,10 +81,10 @@
         </div>
         <div class="bi-header-main-menu-cta-area d-flex align-items-center">
           <div class="bi-header-social">
-            <a href="#"> <i class="fab fa-instagram"></i></a>
-            <a href="#"> <i class="fab fa-linkedin-in"></i></a>
-            <a href="#"> <i class="fab fa-facebook"></i></a>
-            <a href="#"> <i class="fab fa-youtube"></i></a>
+            <a href="mailto:info@blocksize.hr"> <i class="fa fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/company/blocksize" target="_blank" rel="noopener noreferrer"> <i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/BlockSize" target="_blank" rel="noopener noreferrer"> <i class="fab fa-facebook"></i></a>
+            
           </div>
           <div class="bi-header-cta-btn-grp d-flex align-items-center">
             <div class="offcanves-btn navSidebar-button">
@@ -124,10 +134,9 @@
               </ul>
             </nav>
             <div class="bi-mobile-header-social text-center">
-              <a href="#"> <i class="fab fa-instagram"></i></a>
-              <a href="#"> <i class="fab fa-linkedin-in"></i></a>
-              <a href="#"> <i class="fab fa-facebook"></i></a>
-              <a href="#"> <i class="fab fa-youtube"></i></a>
+               <a href="mailto:info@blocksize.hr"> <i class="fa fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/company/blocksize" target="_blank" rel="noopener noreferrer"> <i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/BlockSize" target="_blank" rel="noopener noreferrer"> <i class="fab fa-facebook"></i></a>
             </div>
           </div>
         </div>
@@ -427,7 +436,7 @@
                     ><img src="assets/img/about/circle1.png" alt=""
                   /></span>
                   <div
-                    class="about-img1 wow fadeInUp"
+                    class="about-img1 wow fadeInUp hide-on-mobile"
                     data-wow-delay="300ms"
                     data-wow-duration="1000ms"
                   >
@@ -438,7 +447,7 @@
                     />
                   </div>
                   <div
-                    class="about-img2 position-absolute wow fadeInRight"
+                    class="about-img2 position-absolute wow fadeInRight hide-on-mobile"
                     data-wow-delay="500ms"
                     data-wow-duration="1000ms"
                   >
@@ -463,6 +472,10 @@
                     <h2 class="tx-split-text split-in-right">
                       Trusted Code Experts
                     </h2>
+                    <!-- Slika koja se prikazuje samo na mobilnim uređajima -->
+                    <div class="mobile-only-image" style="display: none;">
+                      <img src="assets/img/about/ab11.jpg" alt="" style="border-radius: 20px; width: 100%; margin: 15px 0;" />
+                    </div>
                   </div>
                   <div class="bi-about-text-area-4 bins-text">
                     <p>
@@ -484,7 +497,14 @@
                         <li><i class="fal fa-award"></i>Quality</li>
                       </ul>
                     </div>
-                    
+                    <div class="bi-btn-4 text-uppercase">
+                      <a href="contact.html"
+                        >contact us
+                        <span
+                          class="d-flex justify-content-center align-items-center"
+                          ><img src="assets/img/icon/arrow.svg" alt="" /></span
+                      ></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -674,6 +694,14 @@
                           <li>24/7 Online Support</li>
                         </ul>
                       </div>
+                      <div class="bi-btn-4 text-uppercase">
+                      <a href="contact.html"
+                        >contact us
+                        <span
+                          class="d-flex justify-content-center align-items-center"
+                          ><img src="assets/img/icon/arrow.svg" alt="" /></span
+                      ></a>
+                    </div>
                     </div>
                   </div>
                 </div>
