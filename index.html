@@ -40,83 +40,6 @@
           -webkit-overflow-scrolling: touch;
           padding-bottom: 10px;
           text-align: left;
-          scroll-behavior: smooth;
-          scrollbar-width: thin;
-          position: relative;
-          scroll-snap-type: x mandatory;
-          -ms-overflow-style: none; /* IE i Edge */
-          scrollbar-width: none; /* Firefox */
-        }
-        
-        /* Sakrij scrollbar za Chrome, Safari i Opera */
-        .bi-service-scroll-area::-webkit-scrollbar {
-          display: none;
-        }
-        
-        /* Indikatori skrolanja */
-        .bi-service-scroll-area:before,
-        .bi-service-scroll-area:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          width: 40px;
-          z-index: 2;
-          pointer-events: none;
-        }
-        
-        .bi-service-scroll-area:before {
-          left: 0;
-          background: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%);
-        }
-        
-        .bi-service-scroll-area:after {
-          right: 0;
-          background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 100%);
-        }
-        
-        /* Navigacijske kontrole */
-        .scroll-nav-controls {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          right: 0;
-          z-index: 10;
-          display: flex;
-          justify-content: space-between;
-          pointer-events: none;
-        }
-        
-        .scroll-nav-btn {
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          background-color: rgba(255, 255, 255, 0.8);
-          border: 1px solid #ddd;
-          color: #333;
-          font-size: 18px;
-          font-weight: bold;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-          pointer-events: auto;
-          transform: translateY(-50%);
-          transition: all 0.3s;
-        }
-        
-        .scroll-nav-btn:hover {
-          background-color: rgba(255, 255, 255, 0.95);
-          box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-        }
-        
-        .scroll-left {
-          margin-left: 10px;
-        }
-        
-        .scroll-right {
-          margin-right: 10px;
         }
         
         .bi-service-scroll-item {
@@ -125,7 +48,6 @@
           margin: 0 5px;
           display: inline-block;
           vertical-align: top;
-          scroll-snap-align: start;
         }
         
         .bi-service-scroll-item:first-child {
@@ -672,12 +594,7 @@
 
           </div>
         </div>
-        <div class="bi-service-scroll-area" id="serviceScrollArea">
-          <!-- Navigacijske kontrole za mobilno skrolanje -->
-          <div class="scroll-nav-controls">
-            <button class="scroll-nav-btn scroll-left" aria-label="Skrolaj lijevo">&lt;</button>
-            <button class="scroll-nav-btn scroll-right" aria-label="Skrolaj desno">&gt;</button>
-          </div>
+        <div class="bi-service-scroll-area">
           <div class="bi-service-scroll-item position-relative">
             <div class="service-img">
               <img src="assets/img/service/ser1.png" />
@@ -1319,76 +1236,6 @@
     <script src="assets/js/counter.js"></script>
     <script src="assets/js/gsap.min.js"></script>
     <script src="assets/js/knob.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/fontawesome.js"></script>
-    
-    <!-- JavaScript za horizontalno skrolanje na mobilnim uređajima -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Funkcija za mobilno horizontalno skrolanje
-        function initServiceScrolling() {
-          const scrollArea = document.getElementById('serviceScrollArea');
-          if (!scrollArea) return;
-          
-          const scrollLeftBtn = scrollArea.querySelector('.scroll-left');
-          const scrollRightBtn = scrollArea.querySelector('.scroll-right');
-          const scrollItems = scrollArea.querySelectorAll('.bi-service-scroll-item');
-          
-          if (!scrollLeftBtn || !scrollRightBtn || scrollItems.length === 0) return;
-          
-          // Izračunaj širinu jedne kartice plus margina
-          const itemWidth = scrollItems[0].offsetWidth + 10; // Širina + margina
-          
-          // Dodaj event listenere za gumbe
-          scrollLeftBtn.addEventListener('click', function() {
-            scrollArea.scrollBy({left: -itemWidth, behavior: 'smooth'});
-          });
-          
-          scrollRightBtn.addEventListener('click', function() {
-            scrollArea.scrollBy({left: itemWidth, behavior: 'smooth'});
-          });
-          
-          // Omogući touch skrolanje
-          let isDown = false;
-          let startX;
-          let scrollLeft;
-          
-          scrollArea.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - scrollArea.offsetLeft;
-            scrollLeft = scrollArea.scrollLeft;
-          });
-          
-          scrollArea.addEventListener('mouseleave', () => {
-            isDown = false;
-          });
-          
-          scrollArea.addEventListener('mouseup', () => {
-            isDown = false;
-          });
-          
-          scrollArea.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - scrollArea.offsetLeft;
-            const walk = (x - startX) * 2; // Brzina skrolanja
-            scrollArea.scrollLeft = scrollLeft - walk;
-          });
-        }
-        
-        // Pokreni funkcionalnost samo na mobilnim uređajima
-        if (window.innerWidth <= 767) {
-          initServiceScrolling();
-        }
-        
-        // Ponovno pokreni kad se prozor mijenja veličinu
-        window.addEventListener('resize', function() {
-          if (window.innerWidth <= 767) {
-            initServiceScrolling();
-          }
-        });
-      });
-    </script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/jquery.counterup.min.js"></script>
     <script src="assets/js/waypoints.min.js"></script>
