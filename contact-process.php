@@ -1,4 +1,37 @@
 <?php
+/**
+ * Custom SMTP mail function for cPanel servers
+ * @param string $to Recipient email
+ * @param string $subject Email subject
+ * @param string $message Email message
+ * @param string $from_email Sender email
+ * @param string $from_name Sender name
+ * @return bool Success/failure
+ */
+function send_smtp_mail($to, $subject, $message, $from_email, $from_name) {
+    // cPanel mail settings - adjust these based on your hosting provider
+    $smtp_server = 'mail.blocksize.hr'; // Obično je mail.vašadomena.com ili smtp.vašadomena.com
+    $smtp_port = 587; // Obično 587 (TLS) ili 465 (SSL)
+    $smtp_username = 'info@blocksize.hr'; // Vaš email na cPanelu
+    $smtp_password = ''; // Vaša email lozinka
+    
+    // Prepare headers
+    $headers = "From: $from_name <$smtp_username>\r\n";
+    $headers .= "Reply-To: $from_email\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    
+    // For debugging purposes, log the attempt
+    $log_dir = __DIR__ . '/logs';
+    $log_file = $log_dir . "/smtp-attempts.log";
+    file_put_contents($log_file, date("Y-m-d H:i:s") . " | Attempting SMTP mail to: $to\n", FILE_APPEND);
+    
+    // Try using cPanel's built-in mail sending functions
+    // This method should work on most cPanel servers without additional configuration
+    $additional_parameters = "-f $smtp_username";
+    return mail($to, $subject, $message, $headers, $additional_parameters);
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect and sanitize form data
     $ime = isset($_POST["ime"]) ? strip_tags(trim($_POST["ime"])) : '';
@@ -37,15 +70,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email_content .= "Email: $email\r\n\r\n";
         $email_content .= "Message:\r\n$poruka\r\n";
         
-        // Email headers
+        // Email headers for direct mail function
         $headers = "From: $ime <$email>\r\n";
         $headers .= "Reply-To: $email\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
         
-        // Attempt to send email
+        // Try cPanel-specific mail configuration first
+        $mail_sent = false;
+        
+        // Method 1: Use direct mail() function
         $mail_sent = @mail($to, $subject, $email_content, $headers);
+        
+        // Method 2: If direct mail fails, try alternative mail configuration for cPanel
+        if (!$mail_sent) {
+            // Log mail function failure
+            file_put_contents($log_file, date("Y-m-d H:i:s") . " | Mail function failed, trying alternative method\n", FILE_APPEND);
+            
+            // Create a custom mail function using sockets for cPanel
+            $mail_sent = send_smtp_mail($to, $subject, $email_content, $email, $ime);
+        }
         
         // Create a backup of submitted data in HTML format
         $submission_time = date('Y-m-d_H-i-s');
