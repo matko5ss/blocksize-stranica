@@ -32,6 +32,47 @@
         .mobile-only-image {
           display: block !important;
         }
+        
+        /* Prilagodba za service scroll area na mobilnim uređajima */
+        .bi-service-scroll-area {
+          white-space: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          padding-bottom: 15px;
+          text-align: left;
+        }
+        
+        .bi-service-scroll-item {
+          max-width: 85vw;
+          width: 85vw;
+          margin: 0 8px;
+          display: inline-block;
+          vertical-align: top;
+        }
+        
+        .bi-service-scroll-item:first-child {
+          margin-left: 15px;
+        }
+        
+        .bi-service-scroll-item:last-child {
+          margin-right: 15px;
+        }
+        
+        .bi-service-scroll-item .service-img img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 20px;
+        }
+        
+        .bi-service-scroll-item .service-text {
+          padding: 0px 20px;
+          bottom: 20px;
+        }
+        
+        .bi-service-scroll-item .service-text h3 {
+          font-size: 26px;
+        }
       }
     </style>
     <link rel="stylesheet" href="assets/css/custom.css" />
