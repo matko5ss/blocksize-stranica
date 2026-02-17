@@ -1,115 +1,6 @@
 /*----------------------------------------------------
-CSS TABLE OF CONTENT
-
-Global Area 
-Header Section
-
-******* HOME PAGE 1 ******
-slider
-skill-logo
-quality
-about
-storyboard
-fun-fact
-team
-portfolio
-faq-testimonial
-sponsor
-blog
-
-******* HOME PAGE 2 ******
-global
-banner
-key-feature
-about
-service
-sold-employe
-portfolio
-consult-cta
-pricing
-video-play
-team
-testimonial
-blog
-
-******* HOME PAGE 3 ******
-global
-slider
-what-we-offer
-about
-team
-pricing
-testimonial
-portfolio
-sponsor
-blog
-
-******* HOME PAGE 4 ******
-global
-header
-slider
-about
-text-scroll
-service
-why-choose
-team
-project
-pricing
-counter
-testimonial
-blog
-responsive
-
-******* HOME PAGE 5 ******
-global
-header
-banner
-sponsor
-about
-service
-price
-skill-faq
-portfolio
-team
-counter
-testimonial
-blog
-contact
-topic
-responsive
-
-******* HOME PAGE 6, Home 7 ******
-variables
-mixins
-common
-animation
-title
-header
-sidebar
-hero
-sponser
-project
-button
-service
-cart
-search
-client-logo
-offer
-about
-video
-testimonial
-project-count
-faq
-blog
-contact
-marquee
-choose
-cta
-footer
-
-**Responsive CSS
-
-=====================================================================*/
+Main stylesheet - Global, header, sections, responsive
+----------------------------------------------------*/
 /*=========
 Font load
 ===========*/
@@ -11080,15 +10971,10 @@ select:visited {
   }
 }
 /*---------------------------------------------------- */
-/********************* Home Page 6 **************************/
+/********************* Layout styles **************************/
 /*
 ************
 *************************
-
-Template Name: Name - Template Name
-Description: Template description
-Author: author name
-Version: 1.0
 
 -----------------------------------------------------------------------------------
 

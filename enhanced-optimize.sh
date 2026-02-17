@@ -86,7 +86,7 @@ cat > optimized/html/template.html << 'EOL'
     <title>%%TITLE%%</title>
     <meta name="description" content="%%DESCRIPTION%%">
     <meta name="keywords" content="%%KEYWORDS%%">
-    <meta name="author" content="Themexriver">
+    <meta name="author" content="BLOCKSIZE">
     <link rel="shortcut icon" href="assets/img/logo/f-icon.png" type="image/x-icon">
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">

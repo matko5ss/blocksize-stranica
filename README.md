@@ -1,6 +1,6 @@
-# Blocksize Stranica
+# BLOCKSIZE Website
 
-A modern, responsive web design template based on the Haptic Web Design Agency HTML template. This repository contains a clean, optimized version of the template ready to be deployed to cPanel via Git.
+A modern, responsive website for BLOCKSIZE - R&D Company specializing in AI, Data Science, Web3 and Web Development.
 
 ## Features
 
@@ -12,4 +12,4 @@ A modern, responsive web design template based on the Haptic Web Design Agency H
 
 ## Deployment
 
-This template is configured to be easily deployed to cPanel using Git integration.
+The site is configured to be easily deployed to cPanel using Git integration.

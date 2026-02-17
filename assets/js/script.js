@@ -1,15 +1,8 @@
-/* -----------------------------------------------------------------------------
-
-
-
-File:           JS Core
-Version:        1.0
-Last change:    00/00/00 
--------------------------------------------------------------------------------- */
+/* Main application script */
 (function () {
   "use strict";
 
-  var Haptic = {
+  var BlocksizeApp = {
     init: function () {
       this.Basic.init();
     },
@@ -23,7 +16,7 @@ Last change:    00/00/00
         this.MobileMenu();
         this.scrollTop();
         this.counterUp();
-        this.HapticAnimation();
+        this.BlocksizeAnimation();
         this.TitleAnimation();
         this.TwinMax();
         this.HomeThreeSliderSwiper();
@@ -267,7 +260,7 @@ Last change:    00/00/00
           },
         });
       },
-      HapticAnimation: function () {
+      BlocksizeAnimation: function () {
         gsap.registerPlugin(
           ScrollTrigger,
           ScrollSmoother,
@@ -1345,6 +1338,6 @@ Last change:    00/00/00
     },
   };
   jQuery(document).ready(function () {
-    Haptic.init();
+    BlocksizeApp.init();
   });
 })();
